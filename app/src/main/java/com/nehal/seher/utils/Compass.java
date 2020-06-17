@@ -1,4 +1,4 @@
-package com.nehal.seher.hqibla;
+package com.nehal.seher.utils;
 
 import android.app.Activity;
 import android.app.AlertDialog;

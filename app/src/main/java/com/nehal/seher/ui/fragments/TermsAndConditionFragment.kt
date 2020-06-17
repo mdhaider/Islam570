@@ -11,18 +11,19 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.nehal.seher.MainActivity
-import com.nehal.seher.databinding.OnboardingScreen1FragmentBinding
-import com.nehal.seher.model.Poster
+import com.nehal.seher.databinding.TermsAndConditionFragmentBinding
+import com.nehal.seher.utils.AppPreferences
+import com.nehal.seher.viewmodels.TermsAndConditionViewModel
 
-
-class OnboardingScreen1Fragment : Fragment() {
-    private lateinit var binding:OnboardingScreen1FragmentBinding
+class TermsAndConditionFragment : Fragment() {
+    private lateinit var binding: TermsAndConditionFragmentBinding
     private lateinit var navController: NavController
-    companion object {
-        fun newInstance(message: String)= OnboardingScreen1Fragment()
-        }
 
-    private lateinit var viewModel: OnboardingScreen1ViewModel
+    companion object {
+        fun newInstance(message: String) = TermsAndConditionFragment()
+    }
+
+    private lateinit var viewModel: TermsAndConditionViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +35,7 @@ class OnboardingScreen1Fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding= OnboardingScreen1FragmentBinding.inflate(inflater,container,false)
+        binding = TermsAndConditionFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -45,14 +46,14 @@ class OnboardingScreen1Fragment : Fragment() {
 
     private fun goToOnboard2Screen() {
         val action =
-            OnboardingScreen1FragmentDirections.actionOnboard1To2()
+            TermsAndConditionFragmentDirections.actionOnboard1To2()
         navController.navigate(action)
     }
 
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(OnboardingScreen1ViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(TermsAndConditionViewModel::class.java)
 
         binding.tvPrivacy.setOnClickListener {
             startActivity(
@@ -64,6 +65,7 @@ class OnboardingScreen1Fragment : Fragment() {
         }
 
         binding.btnContinue.setOnClickListener {
+            AppPreferences.isFirstTimeInstall = false
             goToOnboard2Screen()
 
         }

@@ -25,9 +25,9 @@
 
         <activity android:name=".MainActivity">
         </activity>
-        <activity android:name=".ui.fragments.QiblaDirActivity" />
+        <activity android:name=".ui.activities.QiblaDirActivity" />
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".ui.activities.SplashScreenActivity"
             android:theme="@style/SplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

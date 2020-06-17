@@ -1,4 +1,4 @@
-package com.nehal.seher.room
+package com.nehal.seher.room.dao
 
 import androidx.room.Dao
 import androidx.room.Query

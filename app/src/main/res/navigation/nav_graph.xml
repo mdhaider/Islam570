@@ -24,8 +24,8 @@
 
     <fragment
         android:id="@+id/onboarding1Fragment"
-        android:name="com.nehal.seher.ui.fragments.OnboardingScreen1Fragment"
-        tools:layout="@layout/onboarding_screen1_fragment">
+        android:name="com.nehal.seher.ui.fragments.TermsAndConditionFragment"
+        tools:layout="@layout/terms_and_condition_fragment">
         <action
             android:id="@+id/action_onboard1_to_2"
             app:destination="@id/onboarding2Fragment"
@@ -39,8 +39,8 @@
 
     <fragment
         android:id="@+id/onboarding2Fragment"
-        android:name="com.nehal.seher.ui.fragments.OnboardingScreen2Fragment"
-        tools:layout="@layout/onboarding_screen2_fragment">
+        android:name="com.nehal.seher.ui.fragments.AskPermissionFragment"
+        tools:layout="@layout/ask_permission_fragment">
         <action
             android:id="@+id/action_onboard2_to_home"
             app:destination="@id/homeFragment"
@@ -256,7 +256,7 @@
 
     <fragment
         android:id="@+id/qiblaFragment"
-        android:name="com.nehal.seher.hqibla.QiblaFragment"
+        android:name="com.nehal.seher.ui.fragments.QiblaFragment"
         android:label="Qibla"
         tools:layout="@layout/qibla_fragment" />
 

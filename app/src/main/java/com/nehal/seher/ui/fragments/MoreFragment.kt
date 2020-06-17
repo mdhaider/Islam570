@@ -13,6 +13,7 @@ import com.nehal.seher.databinding.MoreFragmentBinding
 import com.nehal.seher.repository.MoreRepository
 import com.nehal.seher.ui.adapters.MoreAdapter
 import com.nehal.seher.utils.TopSpacingItemDecoration
+import com.nehal.seher.viewmodels.MoreViewModel
 
 class MoreFragment : Fragment() {
     private lateinit var binding: MoreFragmentBinding

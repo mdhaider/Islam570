@@ -1,7 +1,6 @@
-package com.nehal.seher.hqibla
+package com.nehal.seher.ui.fragments
 
 import android.Manifest
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
@@ -19,7 +18,9 @@ import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import com.nehal.seher.R
 import com.nehal.seher.databinding.QiblaFragmentBinding
-import com.nehal.seher.hqibla.Compass.CompassListener
+import com.nehal.seher.utils.Compass
+import com.nehal.seher.utils.Compass.CompassListener
+import com.nehal.seher.utils.GPSTracker
 import java.util.*
 
 class QiblaFragment : Fragment() {

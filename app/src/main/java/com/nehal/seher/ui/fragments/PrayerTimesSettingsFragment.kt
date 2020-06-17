@@ -13,10 +13,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.nehal.seher.R
 import com.nehal.seher.databinding.PrayerTimesSettingsFragmentBinding
-import com.nehal.seher.hqibla.GPSTracker
+import com.nehal.seher.utils.GPSTracker
 import com.nehal.seher.repository.PrayerTimesSetingRepository
 import com.nehal.seher.ui.adapters.PrayerSettingsAdapter
 import com.nehal.seher.utils.LocationUtils
+import com.nehal.seher.viewmodels.PrayerTimesSettingsViewModel
 import timber.log.Timber
 
 

@@ -1,4 +1,4 @@
-package com.nehal.seher.hqibla;
+package com.nehal.seher.utils;
 
 public class Constants {
     public static final String TOOLBAR_BG_COLOR = "toolbar_bg_color";

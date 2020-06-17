@@ -2,7 +2,7 @@ package com.nehal.seher.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import com.nehal.seher.room.HadithCollectionRepository
+import com.nehal.seher.repository.HadithCollectionRepository
 import com.nehal.seher.utils.Resource
 import kotlinx.coroutines.Dispatchers
 

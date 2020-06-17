@@ -1,8 +1,9 @@
-package com.nehal.seher
+package com.nehal.seher.ui.activities
 
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
+import com.nehal.seher.MainActivity
 import com.nehal.seher.utils.AppPreferences
 
 class SplashScreenActivity : AppCompatActivity() {
@@ -16,7 +17,10 @@ class SplashScreenActivity : AppCompatActivity() {
     }
 
     private fun decisionToGo() {
-        MainActivity.open(this, AppPreferences.isFirstTimeInstall)
+        MainActivity.open(
+            this,
+            AppPreferences.isFirstTimeInstall
+        )
         finish()
     }
 }

@@ -14,8 +14,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.nehal.seher.databinding.DuaListFragmentBinding
 import com.nehal.seher.factory.DuaModelFactory
 import com.nehal.seher.model.DuaModel
-import com.nehal.seher.room.DuaAndAdhkarDatabase
-import com.nehal.seher.room.DuaDatabseHelper
+import com.nehal.seher.room.databses.DuaAndAdhkarDatabase
+import com.nehal.seher.room.dbhelper.DuaDatabseHelper
 import com.nehal.seher.ui.adapters.DuaCategoryAdapter
 import com.nehal.seher.utils.Status
 import com.nehal.seher.utils.TopSpacingItemDecoration

@@ -1,7 +1,7 @@
-package com.nehal.seher.ui.fragments
+package com.nehal.seher.viewmodels
 
 import androidx.lifecycle.ViewModel
 
-class DuaViewModel : ViewModel() {
+class MoreViewModel : ViewModel() {
     // TODO: Implement the ViewModel
 }

@@ -14,8 +14,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.nehal.seher.databinding.HadisFragmentBinding
 import com.nehal.seher.factory.HadithCollectionModelFactory
 import com.nehal.seher.model.hadith.HadithCollection
-import com.nehal.seher.room.HadithDatabase
-import com.nehal.seher.room.HadithDatabseHelper
+import com.nehal.seher.room.databses.HadithDatabase
+import com.nehal.seher.room.dbhelper.HadithDatabseHelper
 import com.nehal.seher.ui.adapters.HadisAdapter
 import com.nehal.seher.utils.Status
 import com.nehal.seher.utils.TopSpacingItemDecoration

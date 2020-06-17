@@ -12,6 +12,7 @@ import com.downloader.OnDownloadListener
 import com.downloader.PRDownloader
 import com.nehal.seher.utils.FileUtils
 import com.nehal.seher.databinding.QuraanReadFragmentBinding
+import com.nehal.seher.viewmodels.QuraanReadViewModel
 import java.io.File
 
 class QuraanReadFragment : Fragment() {

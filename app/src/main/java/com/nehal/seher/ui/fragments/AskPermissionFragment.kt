@@ -14,11 +14,11 @@ import com.livinglifetechway.quickpermissions_kotlin.runWithPermissions
 import com.livinglifetechway.quickpermissions_kotlin.util.QuickPermissionsOptions
 import com.livinglifetechway.quickpermissions_kotlin.util.QuickPermissionsRequest
 import com.nehal.seher.MainActivity
-import com.nehal.seher.databinding.OnboardingScreen2FragmentBinding
-import com.nehal.seher.utils.AppPreferences
+import com.nehal.seher.databinding.AskPermissionFragmentBinding
+import com.nehal.seher.viewmodels.AskPermissionViewModel
 
-class OnboardingScreen2Fragment : Fragment() {
-    private lateinit var binding: OnboardingScreen2FragmentBinding
+class AskPermissionFragment : Fragment() {
+    private lateinit var binding: AskPermissionFragmentBinding
     private lateinit var navController: NavController
 
     private val quickPermissionsOption = QuickPermissionsOptions(
@@ -28,10 +28,10 @@ class OnboardingScreen2Fragment : Fragment() {
     )
 
     companion object {
-        fun newInstance() = OnboardingScreen1Fragment()
+        fun newInstance() = TermsAndConditionFragment()
     }
 
-    private lateinit var viewModel: OnboardingScreen2ViewModel
+    private lateinit var viewModel: AskPermissionViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,13 +43,13 @@ class OnboardingScreen2Fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = OnboardingScreen2FragmentBinding.inflate(inflater, container, false)
+        binding = AskPermissionFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(OnboardingScreen2ViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(AskPermissionViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
@@ -63,9 +63,8 @@ class OnboardingScreen2Fragment : Fragment() {
     }
 
     private fun goToHomeScreen() {
-        AppPreferences.isFirstTimeInstall=false
         val action =
-            OnboardingScreen2FragmentDirections.actionOnboard2ToHome()
+            AskPermissionFragmentDirections.actionOnboard2ToHome()
         navController.navigate(action)
     }
 

@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.nehal.seher.R
 import com.nehal.seher.databinding.QuraanListenFragmentBinding
+import com.nehal.seher.viewmodels.QuraanReadViewModel
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.plusAssign
 

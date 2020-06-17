@@ -1,4 +1,4 @@
-package com.nehal.seher.ui.fragments
+package com.nehal.seher.ui.activities
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -149,8 +149,10 @@ class QiblaDirActivity : AppCompatActivity() {
                 var head: Float = sensorEvent.values?.get(0)?.roundToInt()?.toFloat()!!
 
                 val destLocation = Location("Destination Location")
-                destLocation.latitude = QIBLA_LATITUDE
-                destLocation.longitude = QIBLA_LONGITUDE
+                destLocation.latitude =
+                    QIBLA_LATITUDE
+                destLocation.longitude =
+                    QIBLA_LONGITUDE
 
                 var bearTo = userLocation.bearingTo(destLocation)
 
