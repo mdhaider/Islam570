@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "432549585598",
+    "firebase_url": "https://seher-f7408.firebaseio.com",
+    "project_id": "seher-f7408",
+    "storage_bucket": "seher-f7408.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432549585598:android:993f23a1de5b447a5f34ef",
+        "android_client_info": {
+          "package_name": "com.nehal.seher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432549585598-40cdtt6tmvogkebi0squ83gj973o40r5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBxpvu53RZznonn8hLewOOu4jnrWjahrY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432549585598-40cdtt6tmvogkebi0squ83gj973o40r5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432549585598:android:95bb3ba6df5cf4805f34ef",
+        "android_client_info": {
+          "package_name": "com.nehal.seher.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432549585598-40cdtt6tmvogkebi0squ83gj973o40r5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBxpvu53RZznonn8hLewOOu4jnrWjahrY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432549585598-40cdtt6tmvogkebi0squ83gj973o40r5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--Each item id should be same as in the nav_graph fragment id-->
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/prayerTimesFragment"
+        android:icon="@drawable/ic_menu_prayers"
+        android:title="@string/prayers" />
+
+    <item
+        android:id="@+id/quraanFragment"
+        android:icon="@drawable/ic_menu_quraan"
+        android:title="@string/quraan" />
+
+    <item
+        android:id="@+id/posterFragment"
+        android:icon="@drawable/ic_baseline_image_24"
+        android:title="@string/posters" />
+
+    <item
+        android:id="@+id/moreFragment"
+        android:icon="@drawable/ic_baseline_more_horiz_24"
+        android:title="@string/more" />
+</menu>

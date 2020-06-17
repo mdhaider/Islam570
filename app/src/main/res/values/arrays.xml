@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="playback_speed_options">
+        <item>1</item>
+        <item>1.2</item>
+        <item>1.4</item>
+        <item>1.6</item>
+        <item>1.8</item>
+        <item>2</item>
+        <item>2.5</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="adhan_method">
+        <item>Shia Ithna-Ansari</item>
+        <item>University of Islamic Sciences, Karachi</item>
+        <item>Islamic Society of North America</item>
+        <item>Muslim World League</item>
+        <item>Umm Al-Qura University, Makkah</item>
+        <item>Egyptian General Authority of Survey</item>
+        <item>Institute of Geophysics, University of Tehran</item>
+        <item>Gulf Region</item>
+        <item>Kuwait</item>
+        <item>Qatar</item>
+        <item>Majlis Ugama Islam Singapura, Singapore</item>
+        <item>Union Organization islamic de France</item>
+    </string-array>
+
+    <string-array name="asr_time">
+        <item>Shafi</item>
+        <item>Hanafi</item>
+    </string-array>
+
+    <string-array name="high_alt">
+        <item>Middle of the Night</item>
+        <item>One Seventh</item>
+        <item>Angle Based</item>
+    </string-array>
+
+    <string-array name="daylight_saving">
+        <item>Auto</item>
+        <item>+1 Hour</item>
+        <item>-1 Hour</item>
+    </string-array>
+
+</resources>

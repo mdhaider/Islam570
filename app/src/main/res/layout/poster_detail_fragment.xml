@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:background="@color/colorBlack"
+    android:layout_centerInParent="true">
+
+  <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/imgPosterDetail"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      tools:src="@drawable/img1"
+      android:scaleType="fitCenter" />
+
+  <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/posterItem"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:fontFamily="sans-serif-condensed-medium"
+      android:paddingStart="16dp"
+      android:paddingTop="20dp"
+      android:paddingEnd="16dp"
+      android:paddingBottom="20dp"
+      android:textColor="@color/colorWhite"
+      android:textSize="18sp"
+      android:layout_centerInParent="true"
+      android:gravity="center"
+      tools:text="Test" />
+
+</RelativeLayout>

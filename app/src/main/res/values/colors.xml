@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#388E3C</color>
+    <color name="colorPrimaryLight">#C8E6C9</color>
+    <color name="colorAccent">#FF9800</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#BDBDBD</color>
+
+    <color name="colorBlack">#000000</color>
+    <color name="color_option_menu">#FF3990</color>
+    <color name="color_black">#000000</color>
+    <color name="color_white">#FFFFFF</color>
+    <color name="primary_color">#11209F</color>
+    <color name="secondary_color">#F5A623</color>
+    <color name="grey_gains_boro">#DCDCDC</color>
+    <color name="grey_light">#D3D3D3</color>
+    <color name="grey_silver">#C0C0C0</color>
+    <color name="grey_dark">#A9A9A9</color>
+
+    <color name="app_red">#C4161C</color>
+
+    <!-- Global colors -->
+    <color name="color_primary">#5f46f4</color>
+    <color name="color_primary_variant">#6200ee</color>
+    <color name="color_on_primary">#FFFFFF</color>
+
+    <color name="color_secondary">#000000</color>
+    <color name="color_secondary_variant">#111111</color>
+    <color name="color_on_secondary">#FFFFFF</color>
+
+    <color name="color_error">#F44336</color>
+    <color name="color_on_error">#FFFFFF</color>
+
+    <color name="color_surface">#FFFFFF</color>
+    <color name="color_on_surface">#000000</color>
+
+    <color name="onboardingTextColor">#6C63FF</color>
+
+    <color name="color_background">#FAFAFA</color>
+    <color name="color_on_background">#000000</color>
+
+    <color name="color_status_bar">#000000</color>
+    <color name="color_toolbar">#FFFFFF</color>
+
+    <color name="color_destructive">#EE5F59</color>
+
+    <color name="color_divider">#979797</color>
+
+    <!-- Player -->
+    <color name="color_played">#FF5F46F4</color>
+    <color name="color_buffered">#1F5F46F4</color>
+    <color name="color_unplayed">#FFBEBEBE</color>
+
+    <color name="colorPurple">#6c63ff</color>
+    <color name="colorIndigo">#303F9F</color>
+    <color name="colorBlueMidnight">#003366</color>
+    <color name="colorGrey">#C9C9C9</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="black_overlay">#66000000</color>
+
+
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--Each item id should be same as in the nav_graph fragment id-->
+
+    <item
+        android:id="@+id/aboutUsFrgament"
+        android:icon="@drawable/ic_dashboard"
+        android:title="About Us" />
+
+    <item
+        android:id="@+id/shareNowFragment"
+        android:icon="@drawable/ic_settings"
+        android:title="Share Now" />
+
+    <item
+        android:id="@+id/rateNowFragment"
+        android:icon="@drawable/ic_settings"
+        android:title="Rate Now" />
+
+    <item
+        android:id="@+id/feedbackFragment"
+        android:icon="@drawable/ic_settings"
+        android:title="Feedback" />
+
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_settings"
+        android:title="Settings" />
+
+</menu>

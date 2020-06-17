@@ -1,0 +1,250 @@
+<resources>
+    <string name="app_name">Islam 570</string>
+    <string name="app_name2"> القرآن الكريم </string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="share_img">Share</string>
+    <string name="setting">Settings</string>
+    <string name="lang">Language</string>
+    <string name="quraan">Quran</string>
+    <string name="hadis">Hadis</string>
+    <string name="qibla">Qibla</string>
+    <string name="prayers">Prayers</string>
+    <string name="posters">Posters</string>
+    <string name="more">More</string>
+    <string name="settings">Settings</string>
+    <string name="atr07">Atr07</string>
+    <string name="next_fragment">Next Fragment</string>
+    <string name="close_app">Close App</string>
+    <string name="accounts_fragment">Accounts Fragment</string>
+    <string name="dashboard_fragment">Dashboard Fragment</string>
+    <string name="profile_fragment">Profile Fragment</string>
+    <string name="settings_fragment">Settings Fragment</string>
+    <string name="opening_pdf">Opening PDF</string>
+
+    <string name="open_in_webview">Open in WebView</string>
+
+    <string name="open_from_assets">Open from Assets</string>
+
+    <string name="open_from_storage">Open from Storage</string>
+
+    <string name="open_from_internet">Open from Internet</string>
+
+    <string name="navigation_drawer_header_title" translatable="false">SoftwareDaily</string>
+
+    <string name="downloads_title">Downloads</string>
+    <string name="auth_title">Authentication</string>
+    <string name="home_title">Software Engineering Daily</string>
+    <string name="comments_title">Comments</string>
+    <string name="episode_details_title" />
+    <string name="related_links_title">Related links</string>
+    <string name="bookmarks_title">Saved</string>
+    <string name="profile_title">Profile</string>
+    <string name="post_error">An error occurred while loading the posts</string>
+    <string name="search_hint">Search for an episode</string>
+
+    <string name="loading_dots">…</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="ok">OK</string>
+
+    <string name="add">Add</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="close">Close</string>
+
+    <string name="please_wait">Please wait…</string>
+
+    <!-- Bottom navigation -->
+    <string name="bottom_navigation_latest">Latest</string>
+    <string name="bottom_navigation_saved">Saved</string>
+    <string name="bottom_navigation_profile">Profile</string>
+
+    <!-- Notificaiton Channel -->
+    <string name="playback_channel_name">Now Playing</string>
+
+    <!-- Notification actions -->
+    <string name="notification_skip_to_previous">Skip to previous track</string>
+    <string name="notification_skip_to_next">Skip to next track</string>
+    <string name="notification_play">Play</string>
+    <string name="notification_pause">Pause</string>
+
+    <!-- Error messages -->
+    <string name="error_generic">Something went wrong, please try again later</string>
+    <string name="error_not_connected">Connection error, please check your internet connection</string>
+
+    <string name="error_media_not_found">Could not locate requested media.</string>
+
+    <string name="error_log_in">Failed to log in, please check that your username and password are correct</string>
+
+    <!-- Player -->
+    <string name="playback_speed_title">Speed</string>
+    <string name="playback_speed">%sx</string>
+
+    <!-- Auth -->
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="username_or_email">Username or Email</string>
+    <string name="password">Password</string>
+    <string name="back_to_login_in">Already a member? Login</string>
+    <string name="back_to_create_account">No account yet? Create one</string>
+
+    <string name="invalid_username">Invalid username</string>
+    <string name="invalid_email">Invalid email</string>
+    <string name="invalid_password">Invalid password</string>
+
+    <string name="prompt_login">You must login to use this feature</string>
+
+    <!-- Profile -->
+    <string name="logout">Logout</string>
+
+    <string name="edit_profile_hint">Please visit the website to edit your profile</string>
+    <string name="login_to_manage_profile">Login to see your profile</string>
+
+    <!-- Bookmakrs -->
+    <string name="login_to_manage_bookmarks">Login to see your saved episodes</string>
+
+    <!-- Home tabs -->
+    <string name="tab_all">All</string>
+    <string name="tab_businessAndPhilosophy">Business and Philosophy</string>
+    <string name="tab_blockchain">Blockchain</string>
+    <string name="tab_cloudEngineering">Cloud Engineering</string>
+    <string name="tab_data">Data</string>
+    <string name="tab_javaScript">JavaScript</string>
+    <string name="tab_machineLearning">Machine Learning</string>
+    <string name="tab_openSource">Open Source</string>
+    <string name="tab_security">Security</string>
+    <string name="tab_hackers">Hackers</string>
+    <string name="tab_greatestHits">Greatest Hits</string>
+    <string name="content_description_podcast_episode_logo">Podcast episode logo</string>
+
+    <!-- Episode details -->
+    <string name="download">Download</string>
+    <string name="delete">Delete</string>
+    <string name="episode_download_succeeded">Episode downloaded successfully</string>
+    <string name="episode_download_failed">Episode downloaded failed, please try again later</string>
+    <string name="episode_delete_download_prompt">Do you really want to delete this download?</string>
+    <string name="rationale_storage_permission">Storage access is needed to download episodes</string>
+    <string name="play">Play</string>
+    <string name="stop">Stop</string>
+    <string name="share">Share</string>
+    <string name="view_episode_link_failed">Cannot open this link at the moment, please try again later</string>
+
+    <!-- Related links -->
+    <string name="add_related_link_success">Link added successfully</string>
+    <string name="add_related_link_failed">@string/error_generic</string>
+    <string name="view_related_link_failed">Cannot open this link at the moment, please try again later</string>
+    <string name="transcript">Transcript</string>
+    <string name="title">Title</string>
+    <string name="url">URL</string>
+    <string name="invalid_title">Invalid title</string>
+    <string name="invalid_url">Invalid URL</string>
+
+    <!-- Comments -->
+    <string name="content_description_comment_author_avatar">Author avatar</string>
+    <string name="no_comments_yet">No comments yet. Be the first to post a comment</string>
+    <string name="reply">Reply</string>
+    <string name="reply_to_">Reply to %s</string>
+    <string name="cancel_reply">Cancel reply</string>
+    <string name="post">Post</string>
+    <string name="add_comment_success">Comment added successfully</string>
+
+    <string name="location_permission_message">Location permission is needed to show direction</string>
+    <string name="location_permission_title">Permission Required!</string>
+
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="compass_dial" translatable="false">Compass Dial</string>
+    <string name="compass_hands" translatable="false">Compass Hands</string>
+    <string name="gps_settings_title" translatable="false">GPS settings</string>
+    <string name="gps_settings_text" translatable="false">GPS is not enabled. Do you want to go to settings menu?</string>
+    <string name="settings_button_ok" translatable="false">Settings</string>
+    <string name="settings_button_cancel" translatable="false">Cancel</string>
+    <string name="msg_permission_not_granted_yet" translatable="false">Location access not available yet</string>
+    <string name="msg_permission_granted" translatable="false">Location Access Granted</string>
+    <string name="toast_permission_required" translatable="false">This app requires Access Location</string>
+    <string name="your_location" translatable="false">Your Location: </string>
+    <string name="unable_to_get_your_location" translatable="false">Unable to get your location</string>
+    <string name="location_not_ready" translatable="false">Location not ready.</string>
+    <string name="pls_enable_location" translatable="false">Please turn on Location</string>
+    <string name="degree" translatable="false">°</string>
+    <string name="using_last_location" translatable="false">using last location.</string>
+    <string name="dialog_message_sensor_not_exist" translatable="false">Your device doesn\'t have the required sensors</string>
+    <string name="dialog_title" translatable="false">Alert</string>
+    <string name="footer_image">Footer Image</string>
+
+    <string name="page_one_text_top">Page One Text Top</string>
+    <string name="page_one_text_bottom">Page One Text Bottom</string>
+    <string name="page_two_text_top">Page Two Text Top</string>
+    <string name="page_two_text_bottom">Page Two Text Bottom</string>
+    <string name="page_three_text_top">Page Three Text Top</string>
+    <string name="page_three_text_bottom">Page Three Text Bottom</string>
+
+    <string name="onboarding_slide1_title">Create an account</string>
+    <string name="onboarding_slide1_subtitle">Connect with people around the world</string>
+    <string name="onboarding_slide1_desc">User will be able to give you live, chat and meet
+        with people nearby.</string>
+
+    <string name="onboarding_slide2_title">Login to your account</string>
+    <string name="onboarding_slide2_subtitle">Let\'s build connection with new people</string>
+    <string name="onboarding_slide2_desc">Connect helps you locate the people around you who
+        are closest from your home.</string>
+
+    <string name="onboarding_slide3_title">Login to your account</string>
+    <string name="onboarding_slide3_subtitle">Feel the happiness</string>
+    <string name="onboarding_slide3_desc">User will be able to give you live, chat and meet
+        with people nearby.</string>
+
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="get_started">Get started</string>
+
+    <string name="sign_in">Sign In</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="new_user">New User?</string>
+
+    <string name="home_screen_title">Home</string>
+    <string name="home_screen_text">Can\'t walk? then fly!</string>
+    <string name="bismi">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</string>
+    <string name="newItem">NEW</string>
+    <string name="token_prefix">Token: %s</string>
+    <string name="token_error">getInstanceId failed</string>
+    <string name="handle_notification_now">We are going to do something with our notification right now!</string>
+    <string name="dlg_loc">Update your location</string>
+    <string name="dlg_loc_msg">Make sure you have location services enabled i.e GPS</string>
+    <string name="dlg_loc_btn">Locate Me</string>
+    <string name="retrieve_token">Retrieve Token</string>
+    <string name="dlg_hj_date_adj_title">Hijri Date Adjustment</string>
+    <string name="dlg_prater_time_conv">Prayer Time Conventions</string>
+    <string name="dlg_asr_time">Asr Time Calculation</string>
+    <string name="dlg_daylight_saving">Daylight Saving Time</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="btn_continue">Continue</string>
+    <string name="by_tapping">By tapping Continue you agree to our</string>
+
+    <string name="doppelganger_image_path">doppelgangers/%d.jpg</string>
+    <string name="image_loading_error">Problem in loading image</string>
+    <string name="needs_loc"><![CDATA[The app needs your location to calculate accurate prayer times & qibla location]]></string>
+    <string name="allow">Allow</string>
+
+    <string-array name="doppelganger_names">
+        <item>Doguel Jackson</item>
+        <item>Llama Lautner</item>
+        <item>Doggison Ford</item>
+        <item>Dogard Barkson</item>
+        <item>Charlie Catlin</item>
+        <item>Frogonna</item>
+    </string-array>
+
+
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+</resources>

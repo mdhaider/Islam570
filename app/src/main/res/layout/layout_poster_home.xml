@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="4dp"
+    app:cardElevation="2dp"
+    android:background="@color/colorWhite"
+    app:cardPreventCornerOverlap="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgpo"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="centerCrop"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/img2"/>
+
+          <androidx.appcompat.widget.AppCompatTextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Poster"
+              android:layout_toEndOf="@+id/imgpo"
+              android:fontFamily="sans-serif"
+              android:textColor="@color/colorBlack"
+              android:layout_marginStart="12dp"
+              android:textSize="16sp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View More"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:textColor="@color/colorPrimary"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="12dp"
+                android:textSize="16sp"/>
+        </RelativeLayout>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgPoster"
+            android:layout_width="match_parent"
+            tools:src="@drawable/img1"
+            android:scaleType="centerCrop"
+            android:layout_height="250dp" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

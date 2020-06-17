@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="2dp"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="2dp"
+    app:cardPreventCornerOverlap="false">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_alignParentStart="true"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            tools:text="The Title of a Blog" />
+
+        <TextView
+            android:id="@+id/tvTrans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_alignParentEnd="true"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            tools:text="The Title of a Blog" />
+
+        <TextView
+            android:id="@+id/tvMeaning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           android:layout_below="@+id/tvName"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginTop="12dp"
+           android:gravity="center"
+            android:textColor="@color/colorBlack"
+            android:textSize="14sp"
+            tools:text="The Title of a Blog" />
+
+        <TextView
+            android:id="@+id/tvMeaningExp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvMeaning"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:textColor="@color/colorBlack"
+            android:textSize="14sp"
+            android:visibility="gone"
+            tools:text="The Title of a Blog" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvMeaningExp"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/colorAccent"
+                android:textSize="14sp"
+                android:text="Benefits of Reading" />
+            <TextView
+                android:id="@+id/tvBenefits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+                android:layout_marginStart="8dp"
+                tools:text="The Title of a dfefdfdfdfdfdfdf dfdfdfdfdf  fefdfdfdfdfdfdfBlog" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
