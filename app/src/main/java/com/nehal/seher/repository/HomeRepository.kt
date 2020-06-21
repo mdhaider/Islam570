@@ -15,8 +15,8 @@ class HomeRepository(private val apiHelper: ApiHelper) {
     suspend fun getHijriFromGreg(date: String, adjustment:Int?) = apiHelper.getHijriFromGreg(date, adjustment)
     suspend fun getPrayerTimes(
         dateOrTimeStamp:String,
-        latitude: String,
-        longitude: String,
+        latitude: Double,
+        longitude: Double,
         method: String
     ) = apiHelper.getPrayerTimes(dateOrTimeStamp,latitude, longitude, method)
 

@@ -17,14 +17,13 @@ import com.nehal.seher.R
 import com.nehal.seher.databinding.HomeFragmentBinding
 import com.nehal.seher.factory.HomeViewModelFactory
 import com.nehal.seher.model.Dua
+import com.nehal.seher.model.LocationObject
 import com.nehal.seher.model.Poster
 import com.nehal.seher.model.gregtohijri.HijriDateResponseData
 import com.nehal.seher.retrofit.ApiHelper
 import com.nehal.seher.retrofit.Retrof
 import com.nehal.seher.ui.binders.*
-import com.nehal.seher.utils.Const
-import com.nehal.seher.utils.Status
-import com.nehal.seher.utils.toast
+import com.nehal.seher.utils.*
 import com.nehal.seher.viewmodels.HomeViewModel
 import mva2.adapter.ItemSection
 import mva2.adapter.ListSection
@@ -44,17 +43,21 @@ class HomeFragment : Fragment() {
     private lateinit var adpater: MultiViewAdapter
     private lateinit var layoutManager: GridLayoutManager
     private lateinit var hijriDateResponseData: HijriDateResponseData
-   private val singleItems = arrayOf("One Day Ago", "Two Days Ago", "None", "One Day Ahead", "Two Days Ahead")
+    private val singleItems =
+        arrayOf("One Day Ago", "Two Days Ago", "None", "One Day Ahead", "Two Days Ahead")
     private val checkedItem = 1
+    private var latitude: Double? = null
+    private var longitude: Double? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = HomeFragmentBinding.inflate(inflater, container, false)
+        getLocation()
         setupViewModel()
         setGregCal()
-        setupObserversForPrayerTimes("", "12.971599", "77.594566", "1")
+        setupObserversForPrayerTimes("", latitude!!, longitude!!, "1")
         return binding.root
     }
 
@@ -126,7 +129,8 @@ class HomeFragment : Fragment() {
         val itemSection1: ItemSection<Header> =
             ItemSection<Header>(Header("Swipe and Drag Section"))
 
-        val itemSection2: ItemSection<HijriDateResponseData> = ItemSection<HijriDateResponseData>(hijriDateResponseData)
+        val itemSection2: ItemSection<HijriDateResponseData> =
+            ItemSection<HijriDateResponseData>(hijriDateResponseData)
 
         val listSection1: ListSection<Dua> = ListSection<Dua>()
         listSection1.addAll(duaList)
@@ -137,9 +141,18 @@ class HomeFragment : Fragment() {
         adpater.addSection(listSection1)
     }
 
+    private fun getLocation() {
+        val loc = ModelPreferences(requireContext()).getObject(
+            Constants.LOCATION_OBJECT,
+            LocationObject::class.java
+        )
+        latitude = loc?.latitude
+        longitude = loc?.longitude
+    }
 
-    private fun goToNextFragment(id:Int) {
-        when(id){
+
+    private fun goToNextFragment(id: Int) {
+        when (id) {
             1 -> goToNames()
             2 -> goToDua()
             3 -> goToUrduPosters()
@@ -191,8 +204,8 @@ class HomeFragment : Fragment() {
 
     private fun setupObserversForPrayerTimes(
         dateOrTimestamp: String,
-        latitude: String,
-        longitude: String,
+        latitude: Double,
+        longitude: Double,
         method: String
     ) {
         viewModel.getPrayerTimes(

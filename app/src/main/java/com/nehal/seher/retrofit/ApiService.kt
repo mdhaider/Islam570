@@ -27,8 +27,8 @@ interface ApiService {
     @GET("timings")
     suspend fun getPrayerTimes(
         @Query("date_or_timestamp") dateOrTimeSTamp:String,
-        @Query("latitude") latitude: String,
-        @Query("longitude") longitude: String,
+        @Query("latitude") latitude: Double,
+        @Query("longitude") longitude: Double,
         @Query("method") method: String
     ): PrayerTimesResponse
 }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Islam 570</string>
+    <string name="app_name">Islamic Guides</string>
     <string name="app_name2"> القرآن الكريم </string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Home</string>
@@ -225,7 +225,7 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="btn_continue">Continue</string>
-    <string name="by_tapping">By tapping Continue you agree to our</string>
+    <string name="by_tapping">By tapping Continue, you agree to our</string>
 
     <string name="doppelganger_image_path">doppelgangers/%d.jpg</string>
     <string name="image_loading_error">Problem in loading image</string>
@@ -246,5 +246,6 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="privacy_policy_amp_disclaimer"><![CDATA[Privacy Policy & Disclaimer]]></string>
 
 </resources>

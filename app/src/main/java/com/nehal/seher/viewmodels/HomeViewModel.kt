@@ -49,8 +49,8 @@ class HomeViewModel(private val homeRepository: HomeRepository) : ViewModel() {
 
     fun getPrayerTimes(
         dateOrTimestamp:String,
-        latitude: String,
-        longitude: String,
+        latitude: Double,
+        longitude: Double,
         method: String
     ) = liveData(Dispatchers.IO) {
         emit(Resource.loading(data = null))

@@ -8,8 +8,8 @@ class ApiHelper(private val apiService: ApiService) {
     suspend fun getHijriFromGreg(date:String, adjustment:Int?) = apiService.getHijriFromGreg(date,adjustment)
     suspend fun getPrayerTimes(
         date_or_timestamp:String,
-        latitude: String,
-        longitude: String,
+        latitude: Double,
+        longitude: Double,
         method: String
     ) = apiService.getPrayerTimes(date_or_timestamp,latitude,longitude, method)
 

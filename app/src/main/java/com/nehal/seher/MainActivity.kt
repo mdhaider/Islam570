@@ -9,8 +9,6 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph
@@ -105,7 +103,6 @@ class MainActivity : AppCompatActivity() {
             R.id.prayerTimesFragment,
             R.id.posterFragment
         ) //Pass the ids of fragments from nav_graph which you d'ont want to show back button in toolbar
-            .setDrawerLayout(binding.mainDrawerLayout) //Pass the drawer layout id from activity xml
             .build()
 
         setSupportActionBar(binding.mainToolbar) //Set toolbar
@@ -118,7 +115,6 @@ class MainActivity : AppCompatActivity() {
         visibilityNavElements(navController) //If you want to hide drawer or bottom navigation configure that in this function
 
         val drawerNavController = Navigation.findNavController(this, R.id.main_nav_host)
-        NavigationUI.setupWithNavController(binding.mainNavigationView, drawerNavController)
         drawerNavController.addOnDestinationChangedListener { _, destination1, _ ->
             when (destination1.id) {
                 R.id.aboutUsFrgament -> toast("hehe")
@@ -159,8 +155,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun hideBothNavigation() { //Hide both drawer and bottom navigation bar
         binding.mainBottomNavigationView.visibility = View.GONE
-        binding.mainNavigationView.visibility = View.GONE
-        binding.mainDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED) //To lock navigation drawer so that it don't respond to swipe gesture
     }
 
     fun showOrHideToolbar(shouldShow: Boolean) {
@@ -173,21 +167,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun hideBottomNavigation() { //Hide bottom navigation
         binding.mainBottomNavigationView.visibility = View.GONE
-        binding.mainNavigationView.visibility = View.VISIBLE
-        binding.mainDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED) //To unlock navigation drawer
-
-        binding.mainNavigationView.setupWithNavController(navController) //Setup Drawer navigation with navController
     }
 
     private fun showBothNavigation() {
         binding.mainBottomNavigationView.visibility = View.VISIBLE
-        binding.mainNavigationView.visibility = View.VISIBLE
-        binding.mainDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
         setupNavControl() //To configure navController with drawer and bottom navigation
     }
 
     private fun setupNavControl() {
-        binding.mainNavigationView.setupWithNavController(navController) //Setup Drawer navigation with navController
         binding.mainBottomNavigationView.setupWithNavController(navController) //Setup Bottom navigation with navController
     }
 
@@ -200,15 +187,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        when { //If drawer layout is open close that on back pressed
-            binding.mainDrawerLayout.isDrawerOpen(GravityCompat.START) -> {
-                binding.mainDrawerLayout.closeDrawer(GravityCompat.START)
+                super.onBackPressed()
             }
-            else -> {
-                super.onBackPressed() //If drawer is already in closed condition then go back
-            }
-        }
-    }
 
     private fun methodRequiresPermissions(quickPermissionsOptions: QuickPermissionsOptions) =
         runWithPermissions(

@@ -1,14 +1,7 @@
 package com.nehal.seher.ui.fragments
 
 import android.Manifest
-import android.annotation.SuppressLint
-import android.content.Context
-import android.content.Intent
-import android.location.Location
-import android.location.LocationManager
 import android.os.Bundle
-import android.os.Looper
-import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,19 +10,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
-import com.google.android.gms.location.*
 import com.livinglifetechway.quickpermissions_kotlin.runWithPermissions
 import com.livinglifetechway.quickpermissions_kotlin.util.QuickPermissionsOptions
 import com.livinglifetechway.quickpermissions_kotlin.util.QuickPermissionsRequest
 import com.nehal.seher.MainActivity
 import com.nehal.seher.databinding.AskPermissionFragmentBinding
-import com.nehal.seher.model.LocationObject
-import com.nehal.seher.utils.Constants
-import com.nehal.seher.utils.ModelPreferences
-import com.nehal.seher.utils.toast
 import com.nehal.seher.viewmodels.AskPermissionViewModel
 
-class AskPermissionFragment : Fragment() {
+class AskPermissionFragmentDel : Fragment() {
     private lateinit var binding: AskPermissionFragmentBinding
     private lateinit var navController: NavController
 
@@ -44,11 +32,10 @@ class AskPermissionFragment : Fragment() {
     }
 
     private lateinit var viewModel: AskPermissionViewModel
-    lateinit var mFusedLocationClient: FusedLocationProviderClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
+
         (activity as MainActivity).showOrHideToolbar(false)
     }
 
@@ -83,59 +70,12 @@ class AskPermissionFragment : Fragment() {
 
     private fun methodRequiresPermissions(quickPermissionsOptions: QuickPermissionsOptions) =
         runWithPermissions(
-            Manifest.permission.ACCESS_COARSE_LOCATION, options = quickPermissionsOptions
+            Manifest.permission.ACCESS_COARSE_LOCATION,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            options = quickPermissionsOptions
         ) {
-            getLastLocation()
-        }
-
-    @SuppressLint("MissingPermission")
-    private fun getLastLocation() {
-        if (isLocationEnabled()) {
-            mFusedLocationClient.lastLocation.addOnCompleteListener(requireActivity()) { task ->
-                var location: Location? = task.result
-                if (location == null) {
-                    requestNewLocationData()
-                } else {
-                    ModelPreferences(requireContext()).putObject(
-                        Constants.LOCATION_OBJECT,
-                        LocationObject(location.latitude, location.longitude)
-                    )
-                    goToHomeScreen()
-                }
-            }
-        } else {
-            activity?.toast("Turn on location")
-            val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
-            startActivity(intent)
-        }
-    }
-
-    @SuppressLint("MissingPermission")
-    private fun requestNewLocationData() {
-        var mLocationRequest = LocationRequest()
-        mLocationRequest.priority = LocationRequest.PRIORITY_NO_POWER
-        mLocationRequest.interval = 0
-        mLocationRequest.fastestInterval = 0
-        mLocationRequest.numUpdates = 1
-
-        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
-        mFusedLocationClient.requestLocationUpdates(
-            mLocationRequest, mLocationCallback,
-            Looper.myLooper()
-        )
-    }
-
-    private val mLocationCallback = object : LocationCallback() {
-        override fun onLocationResult(locationResult: LocationResult) {
-            var mLastLocation: Location = locationResult.lastLocation
-            ModelPreferences(requireContext()).putObject(
-                Constants.LOCATION_OBJECT,
-                LocationObject(mLastLocation.latitude, mLastLocation.longitude)
-            )
             goToHomeScreen()
         }
-    }
-
 
     private fun whenPermAreDenied(req: QuickPermissionsRequest) {
         AlertDialog.Builder(requireContext())
@@ -146,13 +86,5 @@ class AskPermissionFragment : Fragment() {
             }
             .setCancelable(false)
             .show()
-    }
-
-    private fun isLocationEnabled(): Boolean {
-        var locationManager: LocationManager =
-            activity?.getSystemService(Context.LOCATION_SERVICE) as LocationManager
-        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(
-            LocationManager.NETWORK_PROVIDER
-        )
     }
 }
