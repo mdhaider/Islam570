@@ -16,6 +16,7 @@ import androidx.lifecycle.ProcessLifecycleOwner
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
+import com.google.firebase.firestore.FirebaseFirestore
 import com.nehal.seher.utils.AppPreferences
 import io.reactivex.disposables.Disposable
 import io.reactivex.plugins.RxJavaPlugins
@@ -28,7 +29,7 @@ open class SeherApplication : Application(), LifecycleObserver {
         super.onCreate()
 
         if (BuildConfig.DEBUG) {
-          //  FirebaseFirestore.setLoggingEnabled(true)
+            FirebaseFirestore.setLoggingEnabled(true)
             Timber.plant(Timber.DebugTree())
         }
 
