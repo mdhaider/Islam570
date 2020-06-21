@@ -23,6 +23,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GoogleApiAvailability
 import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.iid.FirebaseInstanceId
 import com.livinglifetechway.quickpermissions_kotlin.runWithPermissions
 import com.livinglifetechway.quickpermissions_kotlin.util.QuickPermissionsOptions
@@ -37,6 +38,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navGraph: NavGraph
 
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
+
     private val quickPermissionsOption = QuickPermissionsOptions(
         rationaleMessage = "Custom rational message",
         permanentlyDeniedMessage = "Custom permanently denied message",
@@ -49,6 +52,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this)
+
+        val bundle = Bundle()
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "app launched")
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.LOGIN, bundle)
 
         // Get token
         if (checkGooglePlayServices()) {
