@@ -11,7 +11,9 @@ object AppPreferences {
     // list of app specific preferences
     private val PHONE_NUM = Pair("phone_num", "")
     private val IS_ADMIN=Pair("is_admin",false)
+    private val IS_PERMISSION_GRANTED=Pair("is_permission_granted",false)
     private val IS_WAITING=Pair("is_waiting", false)
+    private val QIBLA_DERAJAT=Pair("qibla_derajat", 0.0f)
     private val USER_ID=Pair("userId", "")
     private val SIGNUP_STATE=Pair("state", 0)
     private val TODAYS_DATE = Pair("today_date",0L)
@@ -68,6 +70,12 @@ object AppPreferences {
             it.putBoolean(IS_WAITING.first, value)
         }
 
+    var isPermissionGranted: Boolean
+        get() = preferences.getBoolean(IS_PERMISSION_GRANTED.first, IS_PERMISSION_GRANTED.second)
+        set(value) = preferences.edit {
+            it.putBoolean(IS_PERMISSION_GRANTED.first, value)
+        }
+
     var isPhoneNumberVerified: Boolean
         get() = preferences.getBoolean(IS_PHONE_NUMBER_VERIFIED.first, IS_PHONE_NUMBER_VERIFIED.second)
         set(value) = preferences.edit {
@@ -99,5 +107,11 @@ object AppPreferences {
 
         set(value) = preferences.edit {
             it.putInt(SIGNUP_STATE.first, value)
+        }
+
+    var qiblaDerajat: Float
+        get() = preferences.getFloat(QIBLA_DERAJAT.first, QIBLA_DERAJAT.second)
+        set(value) = preferences.edit {
+            it.putFloat(QIBLA_DERAJAT.first, value)
         }
 }

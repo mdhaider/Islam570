@@ -23,9 +23,7 @@
         android:theme="@style/AppTheme"
         tools:targetApi="n">
 
-        <activity android:name=".MainActivity">
-        </activity>
-        <activity android:name=".ui.activities.QiblaDirActivity" />
+        <activity android:name=".MainActivity"/>
         <activity
             android:name=".ui.activities.SplashScreenActivity"
             android:theme="@style/SplashScreenTheme">

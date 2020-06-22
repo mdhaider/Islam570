@@ -1,8 +1,6 @@
 package com.nehal.seher.ui.fragments
 
 import android.Manifest
-import android.content.Context
-import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
@@ -18,10 +16,13 @@ import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import com.nehal.seher.R
 import com.nehal.seher.databinding.QiblaFragmentBinding
+import com.nehal.seher.utils.AppPreferences
 import com.nehal.seher.utils.Compass
 import com.nehal.seher.utils.Compass.CompassListener
 import com.nehal.seher.utils.GPSTracker
 import java.util.*
+import kotlin.math.cos
+import kotlin.math.sin
 
 class QiblaFragment : Fragment() {
     private var compass: Compass? = null
@@ -30,8 +31,7 @@ class QiblaFragment : Fragment() {
     private var tvAngle: TextView? = null
     private var tvYourLocation: TextView? = null
     private var currentAzimuth = 0f
-    var prefs: SharedPreferences? = null
-    var gps: GPSTracker? = null
+    private var gps: GPSTracker? = null
     private val RC_Permission = 1221
     private lateinit var binding: QiblaFragmentBinding
 
@@ -40,17 +40,12 @@ class QiblaFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding =
-            QiblaFragmentBinding.inflate(inflater, container, false)
+        binding = QiblaFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
-    override fun onViewCreated(
-        view: View,
-        savedInstanceState: Bundle?
-    ) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        prefs = requireActivity().getSharedPreferences("", Context.MODE_PRIVATE)
         gps = GPSTracker(requireActivity())
         qiblatIndicator = binding.qiblaIndicator
         imageDial = binding.dial
@@ -94,8 +89,8 @@ class QiblaFragment : Fragment() {
     }
 
     private fun setupCompass() {
-        val permission_granted = GetBoolean("permission_granted")
-        if (!permission_granted) {
+
+        if (!AppPreferences.isPermissionGranted) {
             getBearing()
         } else {
             tvAngle!!.text = resources.getString(R.string.msg_permission_not_granted_yet)
@@ -134,7 +129,7 @@ class QiblaFragment : Fragment() {
     }
 
     fun adjustArrowQiblat(azimuth: Float) {
-        val kiblat_derajat = GetFloat("kiblat_derajat")
+        val kiblat_derajat = AppPreferences.qiblaDerajat
         val an: Animation = RotateAnimation(
             -currentAzimuth + kiblat_derajat, -azimuth,
             Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF,
@@ -155,7 +150,7 @@ class QiblaFragment : Fragment() {
 
      fun getBearing() {
         // Get the location manager
-        val kaabaDegs = GetFloat("kiblat_derajat")
+         val kaabaDegs = AppPreferences.qiblaDerajat
         if (kaabaDegs > 0.0001) {
             val strYourLocation: String
             strYourLocation =
@@ -198,7 +193,7 @@ class QiblaFragment : Fragment() {
                 && grantResults[0] == PackageManager.PERMISSION_GRANTED
             ) {
                 // permission was granted, yay! Do the
-                SaveBoolean("permission_granted", true)
+                AppPreferences.isPermissionGranted = true
                 tvAngle!!.text = resources.getString(R.string.msg_permission_granted)
                 tvYourLocation!!.text = resources.getString(R.string.msg_permission_granted)
                 qiblatIndicator!!.visibility = View.INVISIBLE
@@ -213,26 +208,6 @@ class QiblaFragment : Fragment() {
                 //requireActivity().finish();
             }
         }
-    }
-
-    fun SaveBoolean(Judul: String?, bbb: Boolean?) {
-        val edit = prefs!!.edit()
-        edit.putBoolean(Judul, bbb!!)
-        edit.apply()
-    }
-
-    fun GetBoolean(Judul: String?): Boolean {
-        return prefs!!.getBoolean(Judul, false)
-    }
-
-    fun SaveFloat(Judul: String?, bbb: Float?) {
-        val edit = prefs!!.edit()
-        edit.putFloat(Judul, bbb!!)
-        edit.apply()
-    }
-
-    fun GetFloat(Judul: String?): Float {
-        return prefs!!.getFloat(Judul, 0f)
     }
 
     fun fetch_GPS() {
@@ -257,11 +232,11 @@ class QiblaFragment : Fragment() {
                 val longDiff = Math.toRadians(kaabaLng - myLng)
                 val y = Math.sin(longDiff) * Math.cos(kaabaLat)
                 val x =
-                    Math.cos(myLatRad) * Math.sin(kaabaLat) - Math.sin(
+                    cos(myLatRad) * sin(kaabaLat) - sin(
                         myLatRad
-                    ) * Math.cos(kaabaLat) * Math.cos(longDiff)
+                    ) * cos(kaabaLat) * cos(longDiff)
                 result = (Math.toDegrees(Math.atan2(y, x)) + 360) % 360
-                SaveFloat("kiblat_derajat", result.toFloat())
+                AppPreferences.qiblaDerajat = result.toFloat()
                 val strKaabaDirection = String.format(
                     Locale.ENGLISH,
                     "%.0f",
