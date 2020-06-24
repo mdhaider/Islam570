@@ -20,6 +20,7 @@ import com.nehal.seher.utils.AppPreferences
 import com.nehal.seher.utils.Compass
 import com.nehal.seher.utils.Compass.CompassListener
 import com.nehal.seher.utils.GPSTracker
+import com.nehal.seher.utils.LocationUtils
 import java.util.*
 import kotlin.math.cos
 import kotlin.math.sin
@@ -49,11 +50,13 @@ class QiblaFragment : Fragment() {
         gps = GPSTracker(requireActivity())
         qiblatIndicator = binding.qiblaIndicator
         imageDial = binding.dial
-        tvAngle = binding.angle
-        tvYourLocation = binding.yourLocation
+        tvAngle = binding.tvDegreesFromNorth
+        tvYourLocation = binding.tvLoc
         qiblatIndicator!!.visibility = View.INVISIBLE
         qiblatIndicator!!.visibility = View.GONE
         setupCompass()
+        showDistanceBetween()
+        setLocation()
     }
 
     override fun onStart() {
@@ -94,7 +97,7 @@ class QiblaFragment : Fragment() {
             getBearing()
         } else {
             tvAngle!!.text = resources.getString(R.string.msg_permission_not_granted_yet)
-            tvYourLocation!!.text = resources.getString(R.string.msg_permission_not_granted_yet)
+          //  tvYourLocation!!.text = resources.getString(R.string.msg_permission_not_granted_yet)
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 ActivityCompat.requestPermissions(
                     requireActivity(), arrayOf(
@@ -156,7 +159,7 @@ class QiblaFragment : Fragment() {
             strYourLocation =
                 if (gps!!.getLocation() != null) resources.getString(R.string.your_location) + " " + gps!!.getLocation().latitude + ", " + gps!!.getLocation()
                     .longitude else resources.getString(R.string.unable_to_get_your_location)
-            tvYourLocation!!.text = strYourLocation
+           // tvYourLocation!!.text = strYourLocation
             val strKaabaDirection = String.format(
                 Locale.ENGLISH,
                 "%.0f",
@@ -195,7 +198,7 @@ class QiblaFragment : Fragment() {
                 // permission was granted, yay! Do the
                 AppPreferences.isPermissionGranted = true
                 tvAngle!!.text = resources.getString(R.string.msg_permission_granted)
-                tvYourLocation!!.text = resources.getString(R.string.msg_permission_granted)
+               // tvYourLocation!!.text = resources.getString(R.string.msg_permission_granted)
                 qiblatIndicator!!.visibility = View.INVISIBLE
                 qiblatIndicator!!.visibility = View.GONE
                 fetch_GPS()
@@ -219,12 +222,12 @@ class QiblaFragment : Fragment() {
             // \n is for new line
             val strYourLocation = (resources.getString(R.string.your_location)
                     + " " + myLat + ", " + myLng)
-            tvYourLocation!!.text = strYourLocation
+          //  tvYourLocation!!.text = strYourLocation
             if (myLat < 0.001 && myLng < 0.001) {
                 qiblatIndicator!!.visibility = View.INVISIBLE
                 qiblatIndicator!!.visibility = View.GONE
                 tvAngle!!.text = resources.getString(R.string.location_not_ready)
-                tvYourLocation!!.text = resources.getString(R.string.location_not_ready)
+               // tvYourLocation!!.text = resources.getString(R.string.location_not_ready)
             } else {
                 val kaabaLng = 39.826206
                 val kaabaLat = Math.toRadians(21.422487)
@@ -252,7 +255,18 @@ class QiblaFragment : Fragment() {
             qiblatIndicator!!.visibility = View.INVISIBLE
             qiblatIndicator!!.visibility = View.GONE
             tvAngle!!.text = resources.getString(R.string.pls_enable_location)
-            tvYourLocation!!.text = resources.getString(R.string.pls_enable_location)
         }
+    }
+
+    private fun showDistanceBetween(){
+       val distnce= LocationUtils.calculateDistance(gps!!.latitude, gps!!.longitude, 21.422487, 39.826206)
+        val distnaceinIm= LocationUtils.distanceText(distnce)
+
+        binding.tvDistance.text= distnaceinIm
+    }
+
+    private fun setLocation(){
+        val loc= LocationUtils.getCityNameFromLatLong(gps!!.latitude, gps!!.longitude)
+        binding.tvLoc.text= loc
     }
 }

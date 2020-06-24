@@ -257,7 +257,7 @@
     <fragment
         android:id="@+id/qiblaFragment"
         android:name="com.nehal.seher.ui.fragments.QiblaFragment"
-        android:label="Qibla"
+        android:label="Qibla Direction"
         tools:layout="@layout/qibla_fragment" />
 
     <fragment
