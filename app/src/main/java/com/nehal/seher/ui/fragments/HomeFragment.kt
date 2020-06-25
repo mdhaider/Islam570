@@ -63,7 +63,7 @@ class HomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        (activity as MainActivity).showOrHideToolbar(true)
+        (activity as MainActivity).showOrHideToolbar(false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

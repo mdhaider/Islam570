@@ -8,6 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import com.nehal.seher.MainActivity
 import com.nehal.seher.R
 import com.nehal.seher.databinding.PrayerTimesFragmentBinding
 import com.nehal.seher.factory.HomeViewModelFactory
@@ -28,6 +29,11 @@ class PrayerTimesFragment : Fragment() {
     private lateinit var navController: NavController
     private var latitude:Double?=null
     private var longitude:Double?=null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        (activity as MainActivity).showOrHideToolbar(true)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

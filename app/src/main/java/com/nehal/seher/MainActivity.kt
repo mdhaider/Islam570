@@ -105,7 +105,8 @@ class MainActivity : AppCompatActivity() {
         ) //Pass the ids of fragments from nav_graph which you d'ont want to show back button in toolbar
             .build()
 
-        setSupportActionBar(binding.mainToolbar) //Set toolbar
+        setSupportActionBar(binding.mainToolbar)
+      //  supportActionBar?.setDisplayShowTitleEnabled(false)
 
         setupActionBarWithNavController(
             navController,
